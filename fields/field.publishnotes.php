@@ -42,8 +42,7 @@
 				"div",
 				$note,
 				array(
-					"id"		=> Lang::createHandle($this->get('label')),
-					"style" => "padding-bottom: 1em;"
+					"id"		=> Lang::createHandle($this->get('label'))
 				)
 			);
 			$wrapper->appendChild($div);
