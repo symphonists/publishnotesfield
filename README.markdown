@@ -5,7 +5,7 @@ Lets you add arbitary HTML to the Publish screen.
 Version: 0.1.0  
 Author: [Max Wheeler](http://makenosound.com)  
 Build Date: 29 July 2009  
-Comptability: Symphony 2.0.1+
+Compatability: Symphony 2.0.1+
 
 
 ## Installation
