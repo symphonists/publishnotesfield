@@ -2,4 +2,31 @@
 	Publish Notes Field CSS
 -------------------------------------------------------------------------*/
 
-.field-publishnotes label { display: none; }
+.field-publishnotes label {
+	background: #ffc;
+	border: 1px #ff1 solid;
+	display: none;
+	padding: 5px 10px 10px; }
+
+.field-publishnotes .control input {
+	width: auto;
+}
+
+.field-publishnotes .hover {
+	background: #ffc;
+	cursor: pointer;
+}
+
+.field-publishnotes {
+	position: relative;
+}
+
+.publishnotes-editable {
+	padding-right: 60px;
+}
+
+a.publishnotes-edit {
+	position: absolute;
+	right:0;
+	top: 0;
+}

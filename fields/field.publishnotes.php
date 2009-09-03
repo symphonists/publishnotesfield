@@ -27,8 +27,7 @@
 					`entry_id` int(11) unsigned NOT NULL,
 					`value` text,
 					PRIMARY KEY  (`id`),
-					KEY `entry_id` (`entry_id`),
-					FULLTEXT KEY `value` (`value`)
+					KEY `entry_id` (`entry_id`)
 				) TYPE=MyISAM;"
 			);
 		}
@@ -54,15 +53,32 @@
 					"class" => "publishnotes-editable"
 				)
 			);
+			$edit = new XMLElement(
+				"a",
+				"Edit note",
+				array(
+					"class"	=> "publishnotes-edit",
+					"href" 	=> "#"
+				)
+			);
+			$wrapper->appendChild($edit);
 			$wrapper->appendChild($div);
 			
 			# Add <textarea>
-			$label = Widget::Label($this->get('label'), NULL, Lang::createHandle($this->get('label')));
-			$textarea = Widget::Textarea('fields'.$fieldnamePrefix.'['.$this->get('element_name').']'.$fieldnamePostfix, $this->get('size'), '50', (strlen($note) != 0 ? General::sanitize($note) : NULL));
-
-			if($this->get('formatter') != 'none') $textarea->setAttribute('class', $this->get('formatter'));
+			$label = Widget::Label("Edit: ".$this->get('label'), NULL, Lang::createHandle($this->get('label')));
+			$textarea = Widget::Textarea('fields'.$fieldnamePrefix.'['.$this->get('element_name').']'.$fieldnamePostfix, 8, '50', (strlen($note) != 0 ? General::sanitize($note) : NULL));
 
 			$label->appendChild($textarea);
+			
+			$control = new XMLElement(
+				"div",
+				'<input type="submit" value="Change note"/> or <a href="#">cancel</a>',
+				array(
+					"class" => "control" 
+				)
+			);
+			$label->appendChild($control);
+			
 			if($flagWithError != NULL) $wrapper->appendChild(Widget::wrapFormElementWithError($label, $flagWithError));
 			else $wrapper->appendChild($label);
 		}
