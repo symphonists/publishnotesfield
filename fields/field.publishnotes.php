@@ -21,7 +21,7 @@
 		
 		function createTable()
 		{
-			return $this->_engine->Database->query(
+			return Symphony::Database()->query(
 				"CREATE TABLE IF NOT EXISTS `tbl_entries_data_" . $this->get('id') . "` (
 					`id` int(11) unsigned NOT NULL auto_increment,
 					`entry_id` int(11) unsigned NOT NULL,
@@ -116,8 +116,8 @@
 			$fields['field_id'] = $id;
 			$fields['note'] = $this->get('note');
 
-			$this->_engine->Database->query("DELETE FROM `tbl_fields_".$this->handle()."` WHERE `field_id` = '$id' LIMIT 1");		
-			return $this->_engine->Database->insert($fields, 'tbl_fields_' . $this->handle());
+			Symphony::Database()->query("DELETE FROM `tbl_fields_".$this->handle()."` WHERE `field_id` = '$id' LIMIT 1");		
+			return Symphony::Database()->insert($fields, 'tbl_fields_' . $this->handle());
 		}
 		
 	}
