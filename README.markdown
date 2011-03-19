@@ -23,5 +23,5 @@ Lets you add arbitrary HTML to the Publish screen.
 ## Changelog ##
 
 * **1.0** Allow developers to set notes as editable or not
-* **0.1.2** Updated for Symphony 2.2
+* **0.1.2** Updated for Symphony 2.2 by [Nick Dunn](http://nick-dunn.co.uk/)
 * **0.1.1** Allow notes to be entry specific, added inline editor
