@@ -1,18 +1,17 @@
 # Field: Publish Notes
  
-* Version: 0.1.2
-* Author: [Max Wheeler](http://makenosound.com)
-* Build Date: 2011-03-18
+* Version: 1.0  
+* Author: [Max Wheeler](http://makenosound.com)  
+* Build Date: 2011-03-18  
 * Compatability: Symphony 2.2
 
-Lets you add arbitary HTML to the Publish screen.
+Lets you add arbitrary HTML to the Publish screen.
 
 ## Installation
 
 1. Upload the 'publishnotesfield' folder in to your Symphony 'extensions' folder.
 2. Enable it by selecting the "Field: Publish Notes", choose Enable from the with-selected menu, then click Apply.
 3. Add "Publish Notes" to your sections wherever you feel the need.
-
 
 ## Notes
 
@@ -23,5 +22,6 @@ Lets you add arbitary HTML to the Publish screen.
 
 ## Changelog ##
 
+* **1.0** Allow developers to set notes as editable or not
 * **0.1.2** Updated for Symphony 2.2
-* **0.1.1** Allow notes to be entry specific, added inline editor.
+* **0.1.1** Allow notes to be entry specific, added inline editor
