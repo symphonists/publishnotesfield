@@ -1,9 +1,4 @@
 # Field: Publish Notes
- 
-* Version: 1.0  
-* Author: [Max Wheeler](http://makenosound.com)  
-* Build Date: 2011-03-18  
-* Compatability: Symphony 2.2
 
 Lets you add arbitrary HTML to the Publish screen.
 
@@ -19,9 +14,3 @@ Lets you add arbitrary HTML to the Publish screen.
 * With great power comes great responsibility: the "Note" field let you put whatever you want in it and that raw output is included on the Publish screen.
 	
 	Be careful you don't break anything.
-
-## Changelog ##
-
-* **1.0** Allow developers to set notes as editable or not
-* **0.1.2** Updated for Symphony 2.2 by [Nick Dunn](http://nick-dunn.co.uk/)
-* **0.1.1** Allow notes to be entry specific, added inline editor
