@@ -6,9 +6,9 @@
 		Definition:
 	-------------------------------------------------------------------------*/
 		
-		public function __construct(&$parent)
+		public function __construct()
 		{
-			parent::__construct($parent);
+			parent::__construct();
 			
 			$this->_name = 'Publish Notes';
 			$this->_required = FALSE;
