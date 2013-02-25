@@ -6,21 +6,6 @@
 		Extension Definition:
 	-------------------------------------------------------------------------*/
 		
-		public function about()
-		{
-			return array(
-				'name'			=> 'Field: Publish Notes',
-				'version'		=> '1.0',
-				'release-date'	=> '2011-03-19',
-				'author'		=> array(
-					'name'			=> 'Max Wheeler',
-					'website'		=> 'http://makenosound.com/',
-					'email'			=> 'max@makenosound.com'
-				),
-				'description'	=> 'Lets you add arbitrary HTML to the Publish screen.'
-			);
-		}
-		
 		public function getSubscribedDelegates() {
 			return array(
 				array(
@@ -34,12 +19,13 @@
 		public function install()
 		{
 			return Symphony::Database()->query("CREATE TABLE `tbl_fields_publishnotes`(
-				`id` int(11) unsigned NOT NULL auto_increment,
-				`field_id` int(11) unsigned NOT NULL,
-				`note` text NULL,
-				`editable` tinyint(1) default '0',
-				PRIMARY KEY (`id`),
-				KEY `field_id` (`field_id`))"
+					`id` int(11) unsigned NOT NULL auto_increment,
+					`field_id` int(11) unsigned NOT NULL,
+					`note` text NULL,
+					`editable` tinyint(1) default '0',
+					PRIMARY KEY (`id`),
+					KEY `field_id` (`field_id`)
+				) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;"
 			);
 		}
 		
@@ -49,13 +35,16 @@
 			return TRUE;
 		}
 		
-		public function update($previous_version) {
-			$context = Symphony::Database()->fetchVar('Field', 0, "SHOW COLUMNS FROM `tbl_fields_publishnotes` LIKE 'editable'");
-			if(!$context) {
+		public function update($previousVersion = false) 
+		{
+			$status = true;
+
+			if(Symphony::Database()->tableContainsField('tbl_fields_publishnotes', 'editable') === false) {
 				$status = Symphony::Database()->query(
 					"ALTER TABLE `tbl_fields_publishnotes` ADD `editable` tinyint(1) default '0'"
 				);
 			}
+
 			return $status;
 		}
 	
@@ -65,7 +54,7 @@
 		
 		public function initaliseAdminPageHead($context)
 		{
-			$page = $context['parent']->Page;	
+			$page = Administration::instance()->Page;
 			if ($page instanceof ContentPublish AND ($page->_context['page'] == 'edit' OR $page->_context['page'] == 'new')) 
 			{
 				$page->addStylesheetToHead(URL . '/extensions/publishnotesfield/assets/publishnotesfield.publish.css', 'screen', 3220001);
