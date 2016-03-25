@@ -19,6 +19,8 @@
 
 .field-publishnotes {
 	position: relative;
+	height: auto;
+	min-height: auto;
 }
 
 .publishnotes-editable {
