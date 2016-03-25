@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<extension id="publishnotesfield" status="released" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+<extension id="publishnotesfield" status="released" xmlns="http://getsymphony.com/schemas/extension/1.0">
 	<name>Publish Notes Field</name>
 	<description>Arrange arbitrary HTML notes</description>
 	<repo type="github">https://github.com/symphonists/publishnotesfield</repo>
-	<url type="discuss">http://symphony-cms.com/discuss/thread/25695/</url>
+	<url type="discuss">http://www.getsymphony.com/discuss/thread/25695/</url>
 	<types>
 		<type>Field Types</type>
+		<type>Workflow</type>
 	</types>
 	<authors>
 		<author>
@@ -16,6 +17,9 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="1.2.0" date="2016-03-25" min="2.3" max="2.x.x">
+			- CSS fixes for Symphony 2.6.x
+		</release>
 		<release version="1.1" date="2013-02-25" min="2.3">
 			- Update for Symphony 2.3
 		</release>
