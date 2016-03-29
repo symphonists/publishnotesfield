@@ -17,6 +17,9 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="1.2.1" date="2016-03-29" min="2.3" max="2.x.x">
+			- Fixed type issue
+		</release>
 		<release version="1.2.0" date="2016-03-25" min="2.3" max="2.x.x">
 			- CSS fixes for Symphony 2.6.x
 		</release>
