@@ -64,7 +64,7 @@
 
 				# Add <textarea>
 				$label = Widget::Label("Edit: ".$this->get('label'), NULL, Lang::createHandle($this->get('label')));
-				$textarea = Widget::Textarea('fields'.$fieldnamePrefix.'['.$this->get('element_name').']'.$fieldnamePostfix, 8, '50', (strlen($note) != 0 ? General::sanitize($note) : NULL));
+				$textarea = Widget::Textarea('fields'.$fieldnamePrefix.'['.$this->get('element_name').']'.$fieldnamePostfix, 8, 50, (strlen($note) != 0 ? General::sanitize($note) : NULL));
 
 				$label->appendChild($textarea);
 
