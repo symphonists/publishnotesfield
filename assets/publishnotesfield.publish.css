@@ -16,7 +16,7 @@
 }
 
 .field-publishnotes:not(.instance) .control input {
-	width: auto;
+	margin-bottom: 0; width: auto;
 }
 
 .field-publishnotes:not(.instance) a.publishnotes-edit {
@@ -44,4 +44,8 @@
 
 .field-publishnotes:not(.instance) p a:hover {
 	color: currentColor;
+}
+
+.field-publishnotes:not(.instance) label {
+	margin-bottom: 0!important;
 }
