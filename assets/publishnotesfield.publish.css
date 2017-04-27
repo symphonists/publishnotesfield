@@ -2,33 +2,46 @@
 	Publish Notes Field CSS
 -------------------------------------------------------------------------*/
 
-.field-publishnotes label {
-	background: #ffc;
-	border: 1px #ff1 solid;
-	display: none;
-	padding: 5px 10px 10px; }
-
-.field-publishnotes .control input {
-	width: auto;
-}
-
-.field-publishnotes .hover {
-	background: #ffc;
-	cursor: pointer;
-}
-
-.field-publishnotes {
+.field-publishnotes:not(.instance) {
+	display: flex;
+	flex-direction: column;
 	position: relative;
+	margin-top: 3rem;
 	height: auto;
 	min-height: auto;
 }
 
-.publishnotes-editable {
-	padding-right: 60px;
+.field-publishnotes:not(.instance) .control {
+	margin-top: 1rem;
 }
 
-a.publishnotes-edit {
-	position: absolute;
-	right:0;
-	top: 0;
+.field-publishnotes:not(.instance) .control input {
+	width: auto;
+}
+
+.field-publishnotes:not(.instance) a.publishnotes-edit {
+	order: 10;
+	align-self: flex-start;
+	border-radius: 5px;
+	position: relative;
+	color: #fff;
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	line-height: 1.6rem;
+	margin: 1rem 0 0;
+	padding: 1rem 1.5rem;
+	background: #2f77eb;
+}
+
+.field-publishnotes:not(.instance).editable a.publishnotes-edit {
+	display: none;
+}
+
+.field-publishnotes:not(.instance) p a {
+	transition: color 0.45s;
+	color: #2f77eb;
+}
+
+.field-publishnotes:not(.instance) p a:hover {
+	color: currentColor;
 }
