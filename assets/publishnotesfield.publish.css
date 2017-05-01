@@ -6,7 +6,6 @@
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	margin-top: 3rem;
 	height: auto;
 	min-height: auto;
 }
