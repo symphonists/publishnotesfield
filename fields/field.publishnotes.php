@@ -11,7 +11,7 @@
 			parent::__construct();
 
 			$this->_name = 'Publish Notes';
-			$this->_required = FALSE;
+			$this->_required = false;
 			$this->set('show_column', 'no');
 		}
 
@@ -23,9 +23,9 @@
 		{
 			return Symphony::Database()->query(
 				"CREATE TABLE IF NOT EXISTS `tbl_entries_data_" . $this->get('id') . "` (
-					`id` int(11) unsigned NOT NULL auto_increment,
-					`entry_id` int(11) unsigned NOT NULL,
-					`value` text,
+					`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+					`entry_id` INT(11) UNSIGNED NOT NULL,
+					`value` TEXT,
 					PRIMARY KEY  (`id`),
 					KEY `entry_id` (`entry_id`)
 				) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;"
@@ -34,7 +34,7 @@
 
 		public function fetchIncludableElements()
 		{
-			return NULL;
+			return null;
 		}
 
 	/*-------------------------------------------------------------------------
@@ -63,8 +63,8 @@
 				$wrapper->appendChild($edit);
 
 				# Add <textarea>
-				$label = Widget::Label("Edit: ".$this->get('label'), NULL, Lang::createHandle($this->get('label')));
-				$textarea = Widget::Textarea('fields'.$fieldnamePrefix.'['.$this->get('element_name').']'.$fieldnamePostfix, 8, 50, (strlen($note) != 0 ? General::sanitize($note) : NULL));
+				$label = Widget::Label("Edit: ".$this->get('label'), null, Lang::createHandle($this->get('label')));
+				$textarea = Widget::Textarea('fields'.$fieldnamePrefix.'['.$this->get('element_name').']'.$fieldnamePostfix, 8, 50, (strlen($note) != 0 ? General::sanitize($note) : null));
 
 				$label->appendChild($textarea);
 
@@ -76,7 +76,7 @@
 				);
 				$label->appendChild($control);
 
-				if($flagWithError != NULL) $wrapper->appendChild(Widget::Error($label, $flagWithError));
+				if($flagWithError != null) $wrapper->appendChild(Widget::Error($label, $flagWithError));
 				else $wrapper->appendChild($label);
 			}
 		}
@@ -97,7 +97,7 @@
 			$wrapper->appendChild($label);
 
 			# Setting: Editable
-			$div = new XMLElement('div', NULL, array('class' => 'compact'));
+			$div = new XMLElement('div', null, array('class' => 'compact'));
 			$setting = new XMLElement('label', '<input name="fields[' . $order . '][editable]" value="1" type="checkbox"' . ($this->get('editable') == 0 ? '' : ' checked="checked"') . '/> ' . __('Allow note to be edited?'));
 			$div->appendChild($setting);
 			$wrapper->appendChild($div);
@@ -109,11 +109,11 @@
 
 		public function commit()
 		{
-			if(!parent::commit()) return FALSE;
+			if(!parent::commit()) return false;
 
 			$id = $this->get('id');
 
-			if($id === FALSE) return FALSE;
+			if($id === false) return false;
 
 			$fields = array();
 
