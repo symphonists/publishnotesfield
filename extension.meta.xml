@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension id="publishnotesfield" status="released" xmlns="http://getsymphony.com/schemas/extension/1.0">
-	<name>Publish Notes Field</name>
+	<name>Field: Publish Notes</name>
 	<description>Arrange arbitrary HTML notes</description>
 	<repo type="github">https://github.com/symphonists/publishnotesfield</repo>
 	<url type="discuss">http://www.getsymphony.com/discuss/thread/25695/</url>
@@ -19,6 +19,7 @@
 	<releases>
 		<release version="2.0.0" date="TBA" min="4.0.0" max="4.x.x" php-min="5.6.x" php-max="7.x.x">
 			- Update for Symphony 4.x
+			- Code refactoring for Database and EQFA
 		</release>
 		<release version="1.2.1" date="2016-03-29" min="2.3" max="2.x.x">
 			- Fixed type issue

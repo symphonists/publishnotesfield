@@ -18,21 +18,41 @@
 
 		public function install()
 		{
-			return Symphony::Database()->query("CREATE TABLE `tbl_fields_publishnotes`(
-					`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-					`field_id` INT(11) UNSIGNED NOT NULL,
-					`note` TEXT NULL,
-					`editable` TINYINT(1) DEFAULT '0',
-					PRIMARY KEY (`id`),
-					KEY `field_id` (`field_id`)
-				) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;"
-			);
+			return Symphony::Database()
+				->create('tbl_fields_publishnotes')
+				->ifNotExists()
+				->charset('utf8')
+				->collate('utf8_unicode_ci')
+				->fields([
+					'id' => [
+						'type' => 'int(11)',
+						'auto' => true,
+					],
+					'field_id' => 'int(11)',
+					'note' => [
+						'type' => 'text',
+						'null' => true,
+					],
+					'editable' => [
+						'type' => 'tinyint(1)',
+						'default' => 0,
+					],
+				])
+				->keys([
+					'id' => 'primary',
+					'field_id' => 'key',
+				])
+				->execute()
+				->success();
 		}
 
 		public function uninstall()
 		{
-			Symphony::Database()->query("DROP TABLE `tbl_fields_publishnotes`");
-			return true;
+			Symphony::Database()
+				->drop('tbl_fields_publishnotes')
+				->ifExists()
+				->execute()
+				->success();
 		}
 
 		public function update($previousVersion = false)
@@ -40,9 +60,16 @@
 			$status = true;
 
 			if(Symphony::Database()->tableContainsField('tbl_fields_publishnotes', 'editable') === false) {
-				$status = Symphony::Database()->query(
-					"ALTER TABLE `tbl_fields_publishnotes` ADD `editable` TINYINT(1) DEFAULT '0'"
-				);
+				$status = Symphony::Database()
+					->alter('tbl_fields_publishnotes')
+					->add([
+						'editable' => [
+							'type' => 'tinyint(1)',
+							'default' => 0,
+						],
+					])
+					->execute()
+					->success();
 			}
 
 			return $status;
