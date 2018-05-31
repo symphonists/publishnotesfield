@@ -32,7 +32,10 @@
 						'auto' => true,
 					],
 					'entry_id' => 'int(11)',
-					'value' => 'text',
+					'value' => [
+						'type' => 'text',
+						'null' => true,
+					],
 				])
 				->keys([
 					'id' => 'primary',
