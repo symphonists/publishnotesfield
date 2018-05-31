@@ -48,7 +48,7 @@
 
 		public function uninstall()
 		{
-			Symphony::Database()
+			return Symphony::Database()
 				->drop('tbl_fields_publishnotes')
 				->ifExists()
 				->execute()
