@@ -82,7 +82,7 @@
 		public function initaliseAdminPageHead($context)
 		{
 			$page = Administration::instance()->Page;
-			if ($page instanceof ContentPublish AND ($page->_context['page'] == 'edit' OR $page->_context['page'] == 'new'))
+			if ($page instanceof ContentPublish AND ($context == 'edit' OR $context == 'new'))
 			{
 				$page->addStylesheetToHead(URL . '/extensions/publishnotesfield/assets/publishnotesfield.publish.css', 'screen', 3220001);
 				$page->addScriptToHead(URL . '/extensions/publishnotesfield/assets/publishnotesfield.publish.js', 3220003);
