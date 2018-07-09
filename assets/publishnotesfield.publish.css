@@ -37,7 +37,7 @@
 }
 
 .field-publishnotes:not(.instance) p a {
-	transition: color 0.45s;
+	transition: color 0.2s;
 	color: #2f77eb;
 }
 
